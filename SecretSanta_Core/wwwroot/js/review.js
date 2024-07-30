@@ -26,31 +26,6 @@
 
     });
 
-    //$("#Zip").change(function () {
-    //    $.ajax({
-    //        url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + $("#Zip").val() + "&key=AIzaSyD04sueMyuG6THWq-F-zjNmnmgubBX9vLw",
-    //        success: function (response) {
-    //            var county = "";
-    //            for (i = 0; i < response.results.length; i++) {
-    //                result = response.results[i];
-    //                adresses = result.address_components;
-    //                n = adresses.length;
-    //                for (j = 0; j < n; j++) {
-    //                    type = adresses[j].types[0];
-    //                    if (type == 'locality') county = (adresses[j].long_name);
-    //                    if (type == 'administrative_area_level_2') {
-    //                        county = (adresses[j].long_name);
-    //                    }
-    //                }
-    //                if (county !== "Sonoma County") {
-    //                    $("#Zip").val("");
-    //                    $("#notSonoma").modal("show");
-    //                }
-    //            }
-
-    //        }
-    //    });
-    //});
 
     $('#familyMembers').on('click', '.btnInfo', function () {
         $("#modalInfo").modal("show");
