@@ -56,7 +56,7 @@
 
 $("#Zip").on('change', function () {
     $.ajax({
-        url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + $("#Zip").val() + "&key=AIzaSyAxcHgMPD9Qvo4APUuQX3T0mvGi-gh-MlA",
+        url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + $("#Zip").val() + "&key=",
         success: function (response) {
             if (response.status !== "ZERO_RESULTS") {
                 var county = "";
