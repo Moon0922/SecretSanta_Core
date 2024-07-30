@@ -1,0 +1,78 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+@if ((bool)ViewData["HasAgencyId"])
+{
+    <div class="row">
+        <div class="col-md-6">
+            <form id="profile-form" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="form-floating mb-3">
+                    <div class="col-md-2">
+                        <label asp-for="Input.FirstName" class="col-form-label"></label>
+                    </div>
+                    <div class="col-md-10">
+                        <input asp-for="Input.FirstName" class="form-control"/>
+                        <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <div class="col-md-2">
+                        <label asp-for="Input.LastName" class="col-form-label"></label>
+                    </div>
+                    <div class="col-md-10">
+                        <input asp-for="Input.LastName" class="form-control"/>
+                        <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <div class="col-md-2">
+                        <label asp-for="Input.Phone" class="col-md-2"></label>
+                    </div>
+                    <div class="col-md-10">
+                        <input asp-for="Input.Phone" class="form-control phone"/>
+                        <span asp-validation-for="Input.Phone" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <div class="col-md-2">
+                        <label asp-for="Input.AltPhone" class="col-form-label"></label>
+                    </div>
+                    <div class="col-md-10">
+                        <input asp-for="Input.AltPhone" class="form-control phone"/>
+                        <span asp-validation-for="Input.AltPhone" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <div class="col-md-2">
+                        <label asp-for="Input.Fax" class="col-form-label"></label>
+                    </div>
+                    <div class="col-md-10">
+                        <input asp-for="Input.Fax" class="form-control phone"/>
+                        <span asp-validation-for="Input.Fax" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <div class="col-md-2">
+                        <label asp-for="Input.EstimateWishes" class="col-form-label"></label>
+                    </div>
+                    <div class="col-md-10">
+                        <input asp-for="Input.EstimateWishes" class="form-control"/>
+                        <span asp-validation-for="Input.EstimateWishes" class="text-danger"></span>
+                    </div>
+                </div>
+                <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
+            </form>
+
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
